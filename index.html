@@ -24,12 +24,60 @@
 			id: 1,
 			name: 'Chad Snyder',
 			phoneNumber: '8 (629) 653-9041',
-			image: ''
+			image: 'images/cat.svg'
 		},
 		{
-
+			id: 2,
+			name: 'Milton Warner',
+			phoneNumber: '8 (366) 958-8850',
+			image: 'images/dog.svg'
+		},
+		{
+			id: 3,
+			name: 'Viola Hale',
+			phoneNumber: '8 (687) 456-4873',
+			image: 'images/owl.svg'
+		},
+		{
+			id: 4,
+			name: 'Tyler Herrera',
+			phoneNumber: '8 (537) 867-1647',
+			image: 'images/penguin.svg'
+		},
+		{
+			id: 5,
+			name: 'Gabriel Howell',
+			phoneNumber: '8 (332) 288-8294',
+			image: 'images/sheep.svg'
 		}
-	]
+	];
+
+	var Contact = React.createClass({
+		render: function() {
+			return <li> {this.props.name} </li>;
+		}
+	})
+
+	var ContactsList = React.createClass({
+		render: function() {
+			return (
+				<div>
+					<ul>
+						{
+							CONTACTS.map(function(el) {
+								return <Contact name={el.name}/>;
+							})
+						}
+					</ul>
+				</div>
+			);
+		}
+	});
+
+	ReactDOM.render(
+    <ContactsList />,
+    document.getElementById("content")
+  );
 	</script>
 </body>
 </html>
